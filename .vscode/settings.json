@@ -1,5 +1,5 @@
 {
-  "python.analysis.extraPaths": ["./backend"],
-  "python.autoComplete.extraPaths": ["./backend"],
-  "python.defaultInterpreterPath": "./backend/.venv/bin/python"
+  "python.analysis.extraPaths": ["${workspaceFolder}/backend"],
+  "python.autoComplete.extraPaths": ["${workspaceFolder}/backend"],
+  "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/bin/python"
 }

@@ -9,4 +9,4 @@ if str(backend_path) not in sys.path:
 try:
     from backend.app.main import app
 except ImportError:
-    from app.main import app
+    from app.main import app  # type: ignore[import-not-found]
