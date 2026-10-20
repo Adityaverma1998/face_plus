@@ -24,7 +24,7 @@ class Settings:
     EMBEDDING_DIMENSION: int = 192  # MobileFaceNet 192-dim vector
     
     # CORS
-    CORS_ORIGINS: list[str] = [
+    _default_cors = [
         "http://localhost:3000",
         "http://127.0.0.1:3000",
         "http://localhost:3001",
@@ -33,7 +33,14 @@ class Settings:
         "http://127.0.0.1:5173",
         "http://localhost:8080",
         "http://127.0.0.1:8080",
+        "https://face-plus.vercel.app",
         "*",
     ]
+    _env_cors = os.getenv("CORS_ORIGINS", "")
+    CORS_ORIGINS: list[str] = (
+        [origin.strip() for origin in _env_cors.split(",") if origin.strip()]
+        if _env_cors
+        else _default_cors
+    )
 
 settings = Settings()
